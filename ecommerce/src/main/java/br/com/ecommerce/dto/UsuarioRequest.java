@@ -1,4 +1,6 @@
-package br.com.ecommerce.model;
+package br.com.ecommerce.dto;
+
+import br.com.ecommerce.model.UsuarioRole;
 
 public record UsuarioRequest(
 		 String nome,

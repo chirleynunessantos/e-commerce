@@ -3,9 +3,7 @@ package br.com.ecommerce.model;
 import java.time.LocalDate;
 import java.util.List;
 
-import br.com.ecommerce.enums.StatusPagamento;
 import br.com.ecommerce.enums.StatusVenda;
-import br.com.ecommerce.enums.TipoPagamento;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

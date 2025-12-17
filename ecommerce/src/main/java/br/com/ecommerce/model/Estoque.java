@@ -1,9 +1,5 @@
 package br.com.ecommerce.model;
 
-import java.time.LocalDate;
-
-import br.com.ecommerce.enums.StatusPagamento;
-import br.com.ecommerce.enums.TipoPagamento;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
