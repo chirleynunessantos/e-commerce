@@ -15,7 +15,7 @@ import lombok.Setter;
 
 @Entity
 @Table(name="PRODUTOS")
-@AllArgsConstructor
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,4 +30,58 @@ public class Produto {
     @OneToOne(mappedBy = "produto")
     private Estoque estoque;
 
+    
+       public static ProdutoBuilder builder() {
+        	 return new ProdutoBuilder();
+         }
+ 
+    private  Produto(ProdutoBuilder produtoBuilder) {
+		super();
+		this.codigo =    produtoBuilder.codigo;
+		this.nome =	     produtoBuilder.nome;
+		this.descricao = produtoBuilder.descricao;
+		this.preco =     produtoBuilder.preco;
+		this.estoque =   produtoBuilder.estoque;
+	}
+
+
+
+
+	public static class ProdutoBuilder{
+    	
+    	long codigo;
+    	 String nome;
+         String descricao;
+         BigDecimal preco;
+         Estoque estoque;
+         
+      
+		
+        public ProdutoBuilder setCodigo(long codigo) {
+			this.codigo = codigo;
+			return this;
+		}
+		public ProdutoBuilder setNome(String nome) {
+			this.nome = nome;
+			return this;
+		}
+		public ProdutoBuilder setDescricao(String descricao) {
+			this.descricao = descricao;
+			return this;
+		}
+		public ProdutoBuilder setPreco(BigDecimal preco) {
+			this.preco = preco;
+			return this;
+		}
+		public ProdutoBuilder setEstoque(Estoque estoque) {
+			this.estoque = estoque;
+			return this;
+		}
+        
+        public Produto build() {
+        	return new Produto(this);
+        }
+        
+        
+    }
 }

@@ -25,4 +25,5 @@ public class Estoque {
 	@OneToOne
 	@JoinColumn(name = "produto_id", nullable = false, unique = true)	private Produto produto;
 
+
 }
